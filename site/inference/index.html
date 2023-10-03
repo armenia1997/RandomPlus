@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    
+    <title>inference - StatBook v1</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="..">StatBook v1</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../How_To_Use/">How To Use</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hypothesis Testing <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li class="active">
+    <a href="./">inference</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../multipleLinearRegression/">multipleLinearRegression</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../predictY/">predictY</a>
+</li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Categorical Testing</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../oddsRatio/">oddsRatio</a>
+</li>
+
+        
+            
+<li >
+    <a href="../oneSampleProportionCI/">oneSampleProportionCI</a>
+</li>
+
+        
+            
+<li >
+    <a href="../singleProportionInference/">singleProportionInference</a>
+</li>
+
+        
+            
+<li >
+    <a href="../twoProportionInference/">twoProportionInference</a>
+</li>
+
+        
+            
+<li >
+    <a href="../goodnessOfFit/">goodnessOfFit</a>
+</li>
+
+        
+            
+<li >
+    <a href="../chiSquareIndependence/">chiSquareIndependence</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Random Variate Generation <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Non-Scaled</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../generateStandardNormal/">generateStandardNormal</a>
+</li>
+
+        
+            
+<li >
+    <a href="../generateNormal/">generateNormal</a>
+</li>
+
+        
+            
+<li >
+    <a href="../generateGamma/">generateGamma</a>
+</li>
+
+        
+            
+<li >
+    <a href="../generateInverseGamma/">generateInverseGamma</a>
+</li>
+
+        
+            
+<li >
+    <a href="../generateExponential/">generateExponential</a>
+</li>
+
+        
+            
+<li >
+    <a href="../generateBeta/">generateBeta</a>
+</li>
+
+        
+            
+<li >
+    <a href="../generateLogNormal/">generateLogNormal</a>
+</li>
+
+        
+            
+<li >
+    <a href="../generateBetaPrime/">generateBetaPrime</a>
+</li>
+
+        
+            
+<li >
+    <a href="../generateLevy/">generateLevy</a>
+</li>
+
+        
+            
+<li >
+    <a href="../generatePoisson/">generatePoisson</a>
+</li>
+
+        
+            
+<li >
+    <a href="../generateCauchy/">generateCauchy</a>
+</li>
+
+        
+            
+<li >
+    <a href="../generateWeibull/">generateWeibull</a>
+</li>
+
+        
+            
+<li >
+    <a href="../generateChiSquare/">generateChiSquare</a>
+</li>
+
+        
+            
+<li >
+    <a href="../generatePareto/">generatePareto</a>
+</li>
+
+        
+            
+<li >
+    <a href="../generateT/">generateT</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Scaled</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../generateStandardNormalScaled/">generateStandardNormalScaled</a>
+</li>
+
+        
+            
+<li >
+    <a href="../generateNormalScaled/">generateNormalScaled</a>
+</li>
+
+        
+            
+<li >
+    <a href="../generateLogNormalScaled/">generateLogNormalScaled</a>
+</li>
+
+        
+            
+<li >
+    <a href="../generateCauchyScaled/">generateCauchyScaled</a>
+</li>
+
+        
+            
+<li >
+    <a href="../generateExponentialScaled/">generateExponentialScaled</a>
+</li>
+
+        
+            
+<li >
+    <a href="../generateGammaScaled/">generateGammaScaled</a>
+</li>
+
+        
+            
+<li >
+    <a href="../generateBetaScaled/">generateBetaScaled</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+<li >
+    <a href="../customizedDistribution/">customizedDistribution</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../randomFromDataset/">randomFromDataset</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../markovChain/">markovChain</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Basic Statistics</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../sum_of_squares/">sumOfSquares</a>
+</li>
+
+        
+            
+<li >
+    <a href="../mean/">mean</a>
+</li>
+
+        
+            
+<li >
+    <a href="../median/">median</a>
+</li>
+
+        
+            
+<li >
+    <a href="../mode/">mode</a>
+</li>
+
+        
+            
+<li >
+    <a href="../range/">range</a>
+</li>
+
+        
+            
+<li >
+    <a href="../standard_deviation/">standardDeviation</a>
+</li>
+
+        
+            
+<li >
+    <a href="../variance/">variance</a>
+</li>
+
+        
+            
+<li >
+    <a href="../IQR/">interquartileRange</a>
+</li>
+
+        
+            
+<li >
+    <a href="../factorial/">factorial</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Complex Functions</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../erf/">erf</a>
+</li>
+
+        
+            
+<li >
+    <a href="../inverf/">inverf</a>
+</li>
+
+        
+            
+<li >
+    <a href="../gamma/">gamma</a>
+</li>
+
+        
+            
+<li >
+    <a href="../hypergeometric2f1/">hypergeometric2f1</a>
+</li>
+
+        
+            
+<li >
+    <a href="../incompleteBeta/">incompleteBeta</a>
+</li>
+
+        
+            
+<li >
+    <a href="../regularizedIncompleteBeta/">regularizedIncompleteBeta</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Matrix Operations</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../matAdd/">matAdd</a>
+</li>
+
+        
+            
+<li >
+    <a href="../matSubtract/">matSubtract</a>
+</li>
+
+        
+            
+<li >
+    <a href="../matMult/">matMult</a>
+</li>
+
+        
+            
+<li >
+    <a href="../scalarMatMult/">scalarMatMult</a>
+</li>
+
+        
+            
+<li >
+    <a href="../matTranspose/">matTranspose</a>
+</li>
+
+        
+            
+<li >
+    <a href="../matInverse/">matInverse</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../How_To_Use/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="../multipleLinearRegression/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#inferencelist-independent-cl-mu0">inference(list, independent, CL, mu0)</a></li>
+            <li class="second-level"><a href="#overview">Overview</a></li>
+                
+            <li class="second-level"><a href="#parameters">Parameters</a></li>
+                
+            <li class="second-level"><a href="#returns">Returns</a></li>
+                
+            <li class="second-level"><a href="#posthoc-and-posthocsig-subfields-only-for-3-sample-tests">postHoc and postHocSig subfields (only for 3+ sample tests)</a></li>
+                
+            <li class="second-level"><a href="#examples">Examples</a></li>
+                
+            <li class="second-level"><a href="#algorithmic-background">Algorithmic Background</a></li>
+                
+            <li class="second-level"><a href="#understanding-independent-and-dependent-samples">Understanding Independent and Dependent Samples</a></li>
+                
+                <li class="third-level"><a href="#independent-samples">Independent Samples</a></li>
+                <li class="third-level"><a href="#dependent-samples">Dependent Samples</a></li>
+            <li class="second-level"><a href="#understanding-parametric-and-nonparametric-tests">Understanding Parametric and Nonparametric Tests</a></li>
+                
+                <li class="third-level"><a href="#parametric-tests">Parametric Tests</a></li>
+                <li class="third-level"><a href="#nonparametric-tests">Nonparametric Tests</a></li>
+        <li class="first-level "><a href="#statistical-tests-mathematical-background">Statistical Tests: Mathematical Background</a></li>
+            <li class="second-level"><a href="#1-one-sample-test">1. One Sample Test</a></li>
+                
+                <li class="third-level"><a href="#t-test">t-Test</a></li>
+                <li class="third-level"><a href="#sign-test">Sign Test</a></li>
+            <li class="second-level"><a href="#2-two-sample-test-dependent">2. Two Sample Test (Dependent)</a></li>
+                
+                <li class="third-level"><a href="#paired-t-test">Paired t-Test</a></li>
+                <li class="third-level"><a href="#wilcoxon-signed-rank-test">Wilcoxon Signed-Rank Test</a></li>
+            <li class="second-level"><a href="#3-two-sample-test-independent">3. Two Sample Test (Independent)</a></li>
+                
+                <li class="third-level"><a href="#two-sample-t-test">Two-Sample t-Test</a></li>
+                <li class="third-level"><a href="#wilcoxon-rank-sum-test">Wilcoxon Rank-Sum Test</a></li>
+            <li class="second-level"><a href="#4-three-or-more-samples-dependent">4. Three or More Samples (Dependent)</a></li>
+                
+                <li class="third-level"><a href="#friedman-test">Friedman Test</a></li>
+            <li class="second-level"><a href="#5-three-or-more-samples-independent">5. Three or More Samples (Independent)</a></li>
+                
+                <li class="third-level"><a href="#anova">ANOVA</a></li>
+                <li class="third-level"><a href="#kruskal-wallis-test">Kruskal-Wallis Test</a></li>
+            <li class="second-level"><a href="#steps-in-hypothesis-testing">Steps in Hypothesis Testing</a></li>
+                
+            <li class="second-level"><a href="#null-hypothesis">Null Hypothesis</a></li>
+                
+            <li class="second-level"><a href="#alternative-hypothesis">Alternative Hypothesis</a></li>
+                
+            <li class="second-level"><a href="#types-of-tests">Types of Tests</a></li>
+                
+            <li class="second-level"><a href="#test-statistics">Test Statistics</a></li>
+                
+            <li class="second-level"><a href="#p-value">P-value</a></li>
+                
+            <li class="second-level"><a href="#decision-making">Decision Making</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="inferencelist-independent-cl-mu0"><code>inference(list, independent, CL, mu0)</code></h1>
+<h3 id="overview">Overview</h3>
+<p>Performs statistical inference tests based on the given data. The function will decide which test to use based on the number of samples, whether they are independent or not, and their distribution.</p>
+<blockquote>
+<p><strong>NOTE 1: ALL TESTS IN THIS MODULE ARE TWO-TAILED</strong> (besides F and Chi-Square tests). A future update with one-tailed options may come in a future update.</p>
+<p><strong>NOTE 2</strong>: There aren't any two or more sample tests able to do a hypothesis test for a certain amount of difference between the means/medians of the samples. By default, all two or more sample tests check for a difference in distribution, that is, <span class="arithmatex"><span class="MathJax_Preview"> H_0: D_\mu</span><script type="math/tex"> H_0: D_\mu</script></span> or <span class="arithmatex"><span class="MathJax_Preview"> D_\eta = 0 </span><script type="math/tex"> D_\eta = 0 </script></span> </p>
+<p><strong>NOTE 3:</strong> If <code>dependent = true</code> then all samples must have the same amount of entries. This is a result of the logic of a dependent test, which states that samples must have the same subjects treated at different points. StatBook v1.1 will likely have an algorithm that will weed out entries with nil or missing values.</p>
+<p><strong>NOTE 4:</strong> It is highly recommended to return the warning value, as a <code>warning = true</code> value means the results may have a significant degree of inaccuracy due to computational limits.</p>
+</blockquote>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>list</code></td>
+<td>Table</td>
+<td>A table of lists containing the data to be tested.</td>
+</tr>
+<tr>
+<td><code>independent</code></td>
+<td>Boolean, Nil</td>
+<td>Whether the samples are independent or not (Nil for 1-sample).</td>
+</tr>
+<tr>
+<td><code>CL</code></td>
+<td>Number, (Nil = 0.95)</td>
+<td>Confidence level for the statistical tests (Nil = 0.95).</td>
+</tr>
+<tr>
+<td><code>mu0</code></td>
+<td>Number, (Nil = 0)</td>
+<td>The hypothetical mean tested against in 1-sample test. Defaults to 0 if Nil.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="returns">Returns</h3>
+<p>A table possibly containing the following:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pValue</code></td>
+<td>Number</td>
+<td>The p-value of the test.</td>
+</tr>
+<tr>
+<td><code>rejectH0</code></td>
+<td>Boolean</td>
+<td>Whether to reject the null hypothesis.</td>
+</tr>
+<tr>
+<td><code>stat</code></td>
+<td>Number</td>
+<td>The value of the test statistic.</td>
+</tr>
+<tr>
+<td><code>df</code></td>
+<td>Number, Table, Nil</td>
+<td>Degrees of freedom (some tests have two (F), some not applicable).</td>
+</tr>
+<tr>
+<td><code>center</code></td>
+<td>Table -&gt; Number(s)</td>
+<td>Contains the mean(s) or median(s) of the dataset(s).</td>
+</tr>
+<tr>
+<td><code>centerComp</code></td>
+<td>Number, Nil</td>
+<td>Comparison value for the center (not applicable for some tests).</td>
+</tr>
+<tr>
+<td><code>lowerCI</code></td>
+<td>Number, Nil</td>
+<td>The lower bound of the confidence interval for mean/median (NA for 3+ sample tests).</td>
+</tr>
+<tr>
+<td><code>upperCI</code></td>
+<td>Number, Nil</td>
+<td>The upper bound of the confidence interval for the mean/median (NA for 3+ sample tests)</td>
+</tr>
+<tr>
+<td><code>dependent</code></td>
+<td>Boolean, Nil</td>
+<td>Whether the test is for dependent samples (Nil for one-sample tests).</td>
+</tr>
+<tr>
+<td><code>parametric</code></td>
+<td>Boolean</td>
+<td>Indicates if the test is parametric.</td>
+</tr>
+<tr>
+<td><code>nSamples</code></td>
+<td>Number</td>
+<td>Number of samples in the test.</td>
+</tr>
+<tr>
+<td><code>testType</code></td>
+<td>String</td>
+<td>Specifies the type of the test.</td>
+</tr>
+<tr>
+<td><code>statType</code></td>
+<td>String</td>
+<td>Specifies the type of the test statistic.</td>
+</tr>
+<tr>
+<td><code>centerType</code></td>
+<td>String</td>
+<td>Specifies what measure of central tendency is being tested.</td>
+</tr>
+<tr>
+<td><code>postHoc</code></td>
+<td>Table -&gt; Tables, Nil</td>
+<td>Post-hoc tests with individual test data within each nested table (only for 3+ sample tests).</td>
+</tr>
+<tr>
+<td><code>postHocSig</code></td>
+<td>Table -&gt; Tables, Nil</td>
+<td>Only contains Post-hoc tests with significant p-values (only for 3+ sample tests)</td>
+</tr>
+<tr>
+<td><code>warning</code></td>
+<td>Nil , True</td>
+<td>Warnings if applicable (Nil if false or NA).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="posthoc-and-posthocsig-subfields-only-for-3-sample-tests"><code>postHoc</code> and <code>postHocSig</code> subfields (only for 3+ sample tests)</h3>
+<p>A table possibly containing the following:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>group1</code></td>
+<td>Number</td>
+<td>The index of the first sample selected in the Post Hoc.</td>
+</tr>
+<tr>
+<td><code>group2</code></td>
+<td>Number</td>
+<td>The index of the second sample selected in the Post Hoc.</td>
+</tr>
+<tr>
+<td><code>pValue</code></td>
+<td>Number</td>
+<td>The p-value of the Post Hoc test.</td>
+</tr>
+<tr>
+<td><code>alpha</code></td>
+<td>Number</td>
+<td>The alpha needed for significance entailed by the Bonferonni correction.</td>
+</tr>
+<tr>
+<td><code>rejectH0</code></td>
+<td>Boolean</td>
+<td>Whether to reject the null hypothesis.</td>
+</tr>
+<tr>
+<td><code>stat</code></td>
+<td>Number</td>
+<td>The value of the test statistic.</td>
+</tr>
+<tr>
+<td><code>df</code></td>
+<td>Number, Nil</td>
+<td>Degrees of freedom (some not applicable).</td>
+</tr>
+<tr>
+<td><code>center</code></td>
+<td>Table -&gt; Numbers</td>
+<td>Contains the means or medians of the datasets.</td>
+</tr>
+<tr>
+<td><code>centerComp</code></td>
+<td>Number</td>
+<td>Comparison value for the center.</td>
+</tr>
+<tr>
+<td><code>lowerCI</code></td>
+<td>Number</td>
+<td>The lower bound of the confidence interval for mean/median.</td>
+</tr>
+<tr>
+<td><code>upperCI</code></td>
+<td>Number</td>
+<td>The upper bound of the confidence interval for the mean/median</td>
+</tr>
+<tr>
+<td><code>testType</code></td>
+<td>String</td>
+<td>Specifies the type of the test.</td>
+</tr>
+<tr>
+<td><code>statType</code></td>
+<td>String</td>
+<td>Specifies the type of the test statistic.</td>
+</tr>
+<tr>
+<td><code>centerType</code></td>
+<td>String</td>
+<td>Specifies what measure of central tendency is being tested.</td>
+</tr>
+<tr>
+<td><code>warning</code></td>
+<td>Nil , True</td>
+<td>Warnings if applicable (Nil if false or NA).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="examples">Examples</h3>
+<p>One-Sample Test:</p>
+<pre><code class="language-lua">local data = {
+    {12, 15, 14, 10, 13, 8, 13, 16, 8, 15, 22, 4, 7, 8}
+}
+-- in this case, either one-sample t-test or sign test (depends on normality of sample)
+local CL = 0.95
+local mu0 = 12
+-- if we did not specify mu0, it would default to 0,
+local result = StatBook.inference(data, nil, CL, mu0)
+print(result.pValue, result.stat)
+</code></pre>
+<p>Two-Sample Test:</p>
+<pre><code class="language-lua">local data = {
+    {12, 15, 14, 10, 13, 6, 18},
+    {20, 24, 30, 27, 28, 19, 19}
+}
+local independent = false
+-- in this case, either two-sample dep. t-test or signed-rank test (depends on normality of samples + Folded-F test)
+local CL = 0.95
+local result = StatBook.inference(data, independent, CL)
+print(result.pValue, result.centerComp, result.lowerCI, result.upperCI)
+</code></pre>
+<p>Three-Plus Sample Test:</p>
+<pre><code class="language-lua">local data = {
+    {12, 15, 14, 10, 13, 14},
+    {20, 24, 30, 27, 28, 20},
+    {16, 25, 19, 20, 22, 18},
+    {23, 14, 10, 37, 8, 19}
+}
+local independent = true
+-- in this case, either ANOVA test or Kruskal Wallis test (depends on normality of samples + Levene Test)
+local CL = 0.95
+local result = StatBook.inference(data, independent, CL)
+print(result.pValue, result.postHocSig.group1, result.postHocSig.group2, result.postHocSig.pValue)
+</code></pre>
+<h3 id="algorithmic-background">Algorithmic Background</h3>
+<p>One Sample Test: If the data has only one list, the function performs either a t-test or a sign test based on the Shapiro-Wilk test result for normality.</p>
+<p>Two Sample Test (Dependent): If there are two dependent lists, it performs either a paired t-test or a Wilcoxon signed-rank test based on the Shapiro-Wilk test result.</p>
+<p>Two Sample Test (Independent): If there are two independent lists, it performs either a two-sample t-test or a Wilcoxon rank-sum test.</p>
+<p>Three or More Samples (Dependent): For three or more dependent lists, a Friedman test is performed.</p>
+<p>Three or More Samples (Independent): For three or more independent lists, the function performs either an ANOVA or a Kruskal-Wallis test based on Shapiro-Wilk and Levene tests.</p>
+<p>Internal functions oneSample, twoSampleDep, twoSampleInd, and threePlusSampleInd decide which specific test to use.</p>
+<h2 id="understanding-independent-and-dependent-samples">Understanding Independent and Dependent Samples</h2>
+<h3 id="independent-samples">Independent Samples</h3>
+<ul>
+<li><strong>Definition</strong>: Samples are considered independent when the sample sets are not related in any way. </li>
+<li><strong>Example</strong>: Suppose we have two different classes of students, and we measure their heights. The heights of students in the first class do not influence the heights of students in the second class.</li>
+<li><strong>Statistical Tests</strong>: Typical tests for independent samples include the Two-Sample t-Test and ANOVA.</li>
+</ul>
+<h3 id="dependent-samples">Dependent Samples</h3>
+<ul>
+<li><strong>Definition</strong>: Samples are considered dependent (or paired) when the sample sets are related or matched in some way.</li>
+<li><strong>Example</strong>: Before-and-after measurements on the same subjects (e.g., the heights of students at the beginning and end of a school year).</li>
+<li><strong>Statistical Tests</strong>: Typical tests for dependent samples include the Paired t-Test and the Wilcoxon Signed-Rank Test.</li>
+</ul>
+<hr />
+<h2 id="understanding-parametric-and-nonparametric-tests">Understanding Parametric and Nonparametric Tests</h2>
+<h3 id="parametric-tests">Parametric Tests</h3>
+<ul>
+<li><strong>Definition</strong>: Parametric tests make certain assumptions about the parameters of the population distribution from which the samples are drawn.</li>
+<li><strong>Assumptions</strong>: These tests usually assume that the data is normally distributed. They may also assume homogeneity of variances among groups.</li>
+<li><strong>Examples</strong>: t-Tests, ANOVA, and Pearson correlation are examples of parametric tests.</li>
+<li><strong>Advantages</strong>: Generally more powerful and yield more information about specific parameters than nonparametric tests.</li>
+</ul>
+<h3 id="nonparametric-tests">Nonparametric Tests</h3>
+<ul>
+<li><strong>Definition</strong>: Nonparametric tests do not make strong assumptions about the distribution of the variables.</li>
+<li><strong>Assumptions</strong>: These tests do not assume that the data is normally distributed and are often used when the data is ordinal or nominal.</li>
+<li><strong>Examples</strong>: Wilcoxon Signed-Rank Test, Wilcoxon Rank-Sum Test, and Kruskal-Wallis Test are examples of nonparametric tests.</li>
+<li><strong>Advantages</strong>: Useful for analyzing non-normal distributions and ordinal or nominal data.</li>
+</ul>
+<h1 id="statistical-tests-mathematical-background">Statistical Tests: Mathematical Background</h1>
+<h2 id="1-one-sample-test">1. One Sample Test</h2>
+<h3 id="t-test">t-Test</h3>
+<ul>
+<li><strong>Hypothesis</strong>: Tests whether the mean of a sample is equal to a specified value.</li>
+<li><strong>Formula</strong>: <span class="arithmatex"><span class="MathJax_Preview"> t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}} </span><script type="math/tex"> t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}} </script></span></li>
+<li><strong>Assumptions</strong>: Assumes that the data is normally distributed. The Shapiro-Wilk test is used to verify this.</li>
+</ul>
+<h3 id="sign-test">Sign Test</h3>
+<ul>
+<li><strong>Hypothesis</strong>: Tests whether the median of the sample is equal to a specified value.</li>
+<li><strong>Formula</strong>: The test uses the count of signs of the differences between each observation and the median.</li>
+<li><strong>Assumptions</strong>: Does not assume normality.</li>
+</ul>
+<hr />
+<h2 id="2-two-sample-test-dependent">2. Two Sample Test (Dependent)</h2>
+<h3 id="paired-t-test">Paired t-Test</h3>
+<ul>
+<li><strong>Hypothesis</strong>: Tests whether the means of two paired samples are equal.</li>
+<li><strong>Formula</strong>: <span class="arithmatex"><span class="MathJax_Preview"> t = \frac{\bar{d}}{s_d / \sqrt{n}} </span><script type="math/tex"> t = \frac{\bar{d}}{s_d / \sqrt{n}} </script></span></li>
+<li><strong>Assumptions</strong>: Assumes that the differences between pairs are normally distributed.</li>
+</ul>
+<h3 id="wilcoxon-signed-rank-test">Wilcoxon Signed-Rank Test</h3>
+<ul>
+<li><strong>Hypothesis</strong>: Tests whether the medians of two paired samples are equal.</li>
+<li><strong>Formula</strong>: Uses ranks of the absolute differences between pairs.</li>
+<li><strong>Assumptions</strong>: Does not assume normality.</li>
+</ul>
+<hr />
+<h2 id="3-two-sample-test-independent">3. Two Sample Test (Independent)</h2>
+<h3 id="two-sample-t-test">Two-Sample t-Test</h3>
+<ul>
+<li><strong>Hypothesis</strong>: Tests whether the means of two independent samples are equal.</li>
+<li><strong>Formula</strong>: <span class="arithmatex"><span class="MathJax_Preview"> t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{s^2/n_1 + s^2/n_2}} </span><script type="math/tex"> t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{s^2/n_1 + s^2/n_2}} </script></span></li>
+<li><strong>Assumptions</strong>: Assumes both samples are normally distributed and have equal variances.</li>
+</ul>
+<h3 id="wilcoxon-rank-sum-test">Wilcoxon Rank-Sum Test</h3>
+<ul>
+<li><strong>Hypothesis</strong>: Tests whether the medians of two independent samples are equal.</li>
+<li><strong>Formula</strong>: Uses ranks of all observations.</li>
+<li><strong>Assumptions</strong>: Does not assume normality.</li>
+</ul>
+<hr />
+<h2 id="4-three-or-more-samples-dependent">4. Three or More Samples (Dependent)</h2>
+<h3 id="friedman-test">Friedman Test</h3>
+<ul>
+<li><strong>Hypothesis</strong>: Tests whether more than two related samples have the same population mean ranks.</li>
+<li><strong>Formula</strong>: Based on ranks of each set of samples.</li>
+<li><strong>Assumptions</strong>: Assumes that the observations are related.</li>
+</ul>
+<hr />
+<h2 id="5-three-or-more-samples-independent">5. Three or More Samples (Independent)</h2>
+<h3 id="anova">ANOVA</h3>
+<ul>
+<li><strong>Hypothesis</strong>: Tests whether three or more independent samples have the same mean.</li>
+<li><strong>Formula</strong>: <span class="arithmatex"><span class="MathJax_Preview"> F = \frac{\text{Between-group variance}}{\text{Within-group variance}} </span><script type="math/tex"> F = \frac{\text{Between-group variance}}{\text{Within-group variance}} </script></span></li>
+<li><strong>Assumptions</strong>: Assumes each group is normally distributed and variances are equal. Shapiro-Wilk and Levene tests are used to verify this.</li>
+</ul>
+<h3 id="kruskal-wallis-test">Kruskal-Wallis Test</h3>
+<ul>
+<li><strong>Hypothesis</strong>: Tests whether three or more independent samples have the same median.</li>
+<li><strong>Formula</strong>: Uses ranks of all observations.</li>
+<li><strong>Assumptions</strong>: Does not assume normality or equal variances.</li>
+</ul>
+<h2 id="steps-in-hypothesis-testing">Steps in Hypothesis Testing</h2>
+<ol>
+<li><strong>State the Null Hypothesis</strong></li>
+<li><strong>State the Alternative Hypothesis</strong></li>
+<li><strong>Determine the Level of Significance</strong></li>
+<li><strong>Collect and Analyze Sample Data</strong></li>
+<li><strong>Make a Decision</strong></li>
+</ol>
+<hr />
+<h2 id="null-hypothesis">Null Hypothesis</h2>
+<p>The Null Hypothesis, denoted by <span class="arithmatex"><span class="MathJax_Preview"> H_0 </span><script type="math/tex"> H_0 </script></span>, is a statement of no effect or difference and serves as the basis for statistical testing. </p>
+<p><strong>Example</strong>: <span class="arithmatex"><span class="MathJax_Preview"> H_0: \mu = 25 </span><script type="math/tex"> H_0: \mu = 25 </script></span></p>
+<hr />
+<h2 id="alternative-hypothesis">Alternative Hypothesis</h2>
+<p>The Alternative Hypothesis, denoted by <span class="arithmatex"><span class="MathJax_Preview"> H_a </span><script type="math/tex"> H_a </script></span>, is what you aim to prove. It is a statement that contradicts the null hypothesis.</p>
+<p><strong>Example</strong>: <span class="arithmatex"><span class="MathJax_Preview"> H_a: \mu \neq 25 </span><script type="math/tex"> H_a: \mu \neq 25 </script></span></p>
+<hr />
+<h2 id="types-of-tests">Types of Tests</h2>
+<ul>
+<li><strong>One-tailed test</strong>: Looks for an effect in only one direction.</li>
+<li>Right-tailed</li>
+<li>
+<p>Left-tailed</p>
+</li>
+<li>
+<p><strong>Two-tailed test</strong>: Looks for an effect in either direction.</p>
+</li>
+</ul>
+<hr />
+<h2 id="test-statistics">Test Statistics</h2>
+<p>Depending on the sample size and known parameters, different test statistics like Z, T are used.</p>
+<ul>
+<li><strong>Z-test</strong>: Known variance, large sample size</li>
+<li><strong>T-test</strong>: Unknown variance, small sample size</li>
+</ul>
+<hr />
+<h2 id="p-value">P-value</h2>
+<p>The p-value is the probability of obtaining the observed results, or something more extreme, given that the null hypothesis is true.</p>
+<ul>
+<li><strong>Low p-value (<span class="arithmatex"><span class="MathJax_Preview"> &lt; \alpha </span><script type="math/tex"> < \alpha </script></span>)</strong>: Reject the null hypothesis</li>
+<li><strong>High p-value (<span class="arithmatex"><span class="MathJax_Preview"> &gt; \alpha </span><script type="math/tex"> > \alpha </script></span>)</strong>: Fail to reject the null hypothesis</li>
+</ul>
+<hr />
+<h2 id="decision-making">Decision Making</h2>
+<ul>
+<li><strong>If <span class="arithmatex"><span class="MathJax_Preview"> p-value &lt; \alpha </span><script type="math/tex"> p-value < \alpha </script></span></strong>: Reject the null hypothesis</li>
+<li><strong>If <span class="arithmatex"><span class="MathJax_Preview"> p-value &gt; \alpha </span><script type="math/tex"> p-value > \alpha </script></span></strong>: Fail to reject the null hypothesis</li>
+</ul>
+<hr /></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = ".."</script>
+    
+    <script src="../js/base.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script src="../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

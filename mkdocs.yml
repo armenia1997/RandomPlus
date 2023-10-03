@@ -1,0 +1,78 @@
+site_name: "StatBook v1"
+nav:
+  - Home: index.md
+  - How To Use: How_To_Use.md
+  - Hypothesis Testing: 
+    - inference: inference.md
+    - multipleLinearRegression: multipleLinearRegression.md
+    - predictY: predictY.md
+    - Categorical Testing:
+      - oddsRatio: oddsRatio.md
+      - oneSampleProportionCI: oneSampleProportionCI.md
+      - singleProportionInference: singleProportionInference.md
+      - twoProportionInference: twoProportionInference.md
+      - goodnessOfFit: goodnessOfFit.md
+      - chiSquareIndependence: chiSquareIndependence.md
+  - Random Variate Generation:
+    - Non-Scaled:
+      - generateStandardNormal: generateStandardNormal.md
+      - generateNormal: generateNormal.md
+      - generateGamma: generateGamma.md
+      - generateInverseGamma: generateInverseGamma.md
+      - generateExponential: generateExponential.md
+      - generateBeta: generateBeta.md
+      - generateLogNormal: generateLogNormal.md
+      - generateBetaPrime: generateBetaPrime.md
+      - generateLevy: generateLevy.md
+      - generatePoisson: generatePoisson.md
+      - generateCauchy: generateCauchy.md
+      - generateWeibull: generateWeibull.md
+      - generateChiSquare: generateChiSquare.md
+      - generatePareto: generatePareto.md
+      - generateT: generateT.md
+    - Scaled:
+      - generateStandardNormalScaled: generateStandardNormalScaled.md
+      - generateNormalScaled: generateNormalScaled.md
+      - generateLogNormalScaled: generateLogNormalScaled.md
+      - generateCauchyScaled: generateCauchyScaled.md
+      - generateExponentialScaled: generateExponentialScaled.md
+      - generateGammaScaled: generateGammaScaled.md
+      - generateBetaScaled: generateBetaScaled.md
+    - customizedDistribution: customizedDistribution.md
+    - randomFromDataset: randomFromDataset.md
+    - markovChain: markovChain.md
+  - Other:
+    - Basic Statistics:
+      - sumOfSquares: sum_of_squares.md
+      - mean: mean.md
+      - median: median.md
+      - mode: mode.md
+      - range: range.md
+      - standardDeviation: standard_deviation.md
+      - variance: variance.md
+      - interquartileRange: IQR.md
+      - factorial: factorial.md
+    - Complex Functions:
+      - erf: erf.md
+      - inverf: inverf.md
+      - gamma: gamma.md
+      - hypergeometric2f1: hypergeometric2f1.md
+      - incompleteBeta: incompleteBeta.md
+      - regularizedIncompleteBeta: regularizedIncompleteBeta.md
+    - Matrix Operations:
+      - matAdd: matAdd.md
+      - matSubtract: matSubtract.md
+      - matMult: matMult.md
+      - scalarMatMult: scalarMatMult.md
+      - matTranspose: matTranspose.md
+      - matInverse: matInverse.md
+      
+theme:
+  name: null
+  custom_dir: 'cinder'
+
+
+markdown_extensions:
+  - pymdownx.arithmatex
+extra_javascript:
+  - "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"
