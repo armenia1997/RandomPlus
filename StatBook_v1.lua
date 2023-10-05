@@ -16,6 +16,43 @@ local function createMatrix(numberOfRows, numberOfColumns, allNumberValues)
 	return result
 end
 
+function module.matMult(A, B)
+	local C = createMatrix(#A, #B[1])
+	for i = 1, #A do
+		for j = 1, #B[1] do
+			C[i][j] = 0
+			for k = 1, #A[1] do
+				C[i][j] = C[i][j] + A[i][k] * B[k][j]
+			end
+		end
+	end
+	return C
+end
+
+function module.scalarMatMult(scalar, matrix)
+	local rows = #matrix
+	local cols = #matrix[1]
+	local result = createMatrix(rows, cols)
+
+	for i = 1, rows do
+		for j = 1, cols do
+			result[i][j] = scalar * matrix[i][j]
+		end
+	end
+
+	return result
+end
+
+function module.matSubtract(A, B)
+	local C = createMatrix(#A, 1)
+	for i = 1, #A do
+		C[i][1] = A[i][1] - B[i][1]
+	end
+	return C
+end
+
+-- Special credits to @MYOriginsWorkshop for the following five functions below:
+
 local function matMinor(matrix, row, column)
 	local size = #matrix
 	local minor = {}
@@ -51,41 +88,6 @@ matDeterminant = function(matrix)
 		end
 		return det
 	end
-end
-
-function module.matMult(A, B)
-	local C = createMatrix(#A, #B[1])
-	for i = 1, #A do
-		for j = 1, #B[1] do
-			C[i][j] = 0
-			for k = 1, #A[1] do
-				C[i][j] = C[i][j] + A[i][k] * B[k][j]
-			end
-		end
-	end
-	return C
-end
-
-function module.scalarMatMult(scalar, matrix)
-	local rows = #matrix
-	local cols = #matrix[1]
-	local result = createMatrix(rows, cols)
-
-	for i = 1, rows do
-		for j = 1, cols do
-			result[i][j] = scalar * matrix[i][j]
-		end
-	end
-
-	return result
-end
-
-function module.matSubtract(A, B)
-	local C = createMatrix(#A, 1)
-	for i = 1, #A do
-		C[i][1] = A[i][1] - B[i][1]
-	end
-	return C
 end
 
 function module.matTranspose(matrix)
