@@ -1,4 +1,5 @@
 -- Created by @armenia1997 (Erik Lavoie) 
+-- Special credits to @MYOriginsWorkshop, see below
 --Last Edit: September 26, 2023
 
 local module = {}
