@@ -1,24 +1,25 @@
 -- Created by @armenia1997 (Erik Lavoie) 
--- Special credits to @MYOriginsWorkshop, see below
---Last Edit: September 26, 2023
+--Last Edit: October 7, 2023
 
 local module = {}
 local cofactor, determinant
 
-local function createMatrix(numberOfRows, numberOfColumns, allNumberValues)
-	allNumberValues = allNumberValues or 0
-	local result = {}
-	for row = 1, numberOfRows, 1 do
-		result[row] = {}
-		for column = 1, numberOfColumns, 1 do
-			result[row][column] = allNumberValues
-		end	
+local function generateMatrix(rows, cols, initVal)
+	initVal = initVal or 0
+	local matrix = {}
+	for r = 1, rows do
+		local newRow = {}
+		for c = 1, cols do
+			newRow[c] = initVal
+		end
+		matrix[r] = newRow
 	end
-	return result
+	return matrix
 end
 
+
 function module.matMult(A, B)
-	local C = createMatrix(#A, #B[1])
+	local C = generateMatrix(#A, #B[1])
 	for i = 1, #A do
 		for j = 1, #B[1] do
 			C[i][j] = 0
@@ -33,7 +34,7 @@ end
 function module.scalarMatMult(scalar, matrix)
 	local rows = #matrix
 	local cols = #matrix[1]
-	local result = createMatrix(rows, cols)
+	local result = generateMatrix(rows, cols)
 
 	for i = 1, rows do
 		for j = 1, cols do
@@ -44,90 +45,113 @@ function module.scalarMatMult(scalar, matrix)
 	return result
 end
 
-function module.matSubtract(A, B)
-	local C = createMatrix(#A, 1)
+function module.matSub(A, B)
+	local C = generateMatrix(#A, 1)
 	for i = 1, #A do
 		C[i][1] = A[i][1] - B[i][1]
 	end
 	return C
 end
 
--- Special credits to @MYOriginsWorkshop for the following five functions below:
-
-local function matMinor(matrix, row, column)
-	local size = #matrix
-	local minor = {}
-	local coroutines = {}
-	for i = 1, size - 1 do
-		minor[i] = {}
-		for j = 1, size - 1 do
-			local mRow = i < row and i or i + 1
-			local mCol = j < column and j or j + 1
-			minor[i][j] = matrix[mRow][mCol]
+function module.matAdd(A, B)
+	local rows_A = #A
+	local cols_A = #A[1]
+	local rows_B = #B
+	local cols_B = #B[1]
+	local C = {}
+	for i = 1, rows_A do
+		C[i] = {}
+		for j = 1, cols_A do
+			C[i][j] = A[i][j] + B[i][j]
 		end
 	end
-	return minor
+	return C
 end
 
-matCofactor = function(matrix, row, column)
-	local minor = matMinor(matrix, row, column)
-	local sign = ((row + column) % 2 == 0) and 1 or -1
-	return sign * matDeterminant(minor)
-end
-
-matDeterminant = function(matrix)
-	local size = #matrix
-	if size == 1 then
-		return matrix[1][1]
-	elseif size == 2 then
-		return matrix[1][1] * matrix[2][2] - matrix[1][2] * matrix[2][1]
-	else
-		local det = 0
-		for i = 1, size do
-			local cofactor =  matCofactor(matrix, 1, i)
-			det = det + matrix[1][i] * cofactor
+function module.matSubtract(A, B)
+	local rows_A = #A
+	local cols_A = #A[1]
+	local rows_B = #B
+	local cols_B = #B[1]
+	local C = {}
+	for i = 1, rows_A do
+		C[i] = {}
+		for j = 1, cols_A do
+			C[i][j] = A[i][j] - B[i][j]
 		end
-		return det
 	end
+	return C
 end
 
 function module.matTranspose(matrix)
-	local currentRowVector
-	local numberOfRows = #matrix
-	local numberOfColumns = #matrix[1]
-	local result = createMatrix(numberOfColumns, numberOfRows)
-	for row = 1, numberOfRows, 1 do
-		currentRowVector = matrix[row]
-		for column = 1, #currentRowVector, 1 do
-			result[column][row] = currentRowVector[column]
+	local transpose = {}
+	for i = 1, #matrix[1] do
+		transpose[i] = {}
+	end
+	for i = 1, #matrix do
+		for j = 1, #matrix[1] do
+			transpose[j][i] = matrix[i][j]
 		end
 	end
-	return result
+	return transpose
 end
 
 function module.matInverse(matrix)
-	if (#matrix ~= #matrix[1]) then return nil end
 	local size = #matrix
-	local det = matDeterminant(matrix)
-	if det == 0 then
-		return nil
-	else
-		local adjugate = {}
-		for i = 1, size do
-			adjugate[i] = {}
-			for j = 1, size do
-				local cof = matCofactor(matrix, i, j)
-				adjugate[i][j] = cof
-			end
-		end
-		local inverse = module.matTranspose(adjugate)
-		for i = 1, size do
-			for j = 1, size do
-				inverse[i][j] = inverse[i][j] / det
-			end
-		end
-		return inverse
+	if size ~= #matrix[1] then
+		return nil -- not a square
 	end
+	local aug = {}
+	for i = 1, size do
+		aug[i] = {}
+		for j = 1, size do
+			aug[i][j] = matrix[i][j]
+		end
+		for j = size + 1, 2 * size do
+			if i == j - size then
+				aug[i][j] = 1
+			else
+				aug[i][j] = 0
+			end
+		end
+	end
+	for i = 1, size do
+		local maxNum = math.abs(aug[i][i])
+		local maxRow = i
+		for k = i + 1, size do
+			if math.abs(aug[k][i]) > maxNum then
+				maxNum = math.abs(aug[k][i])
+				maxRow = k
+			end
+		end
+		aug[i], aug[maxRow] = aug[maxRow], aug[i]
+		for k = i + 1, size do
+			local fac = aug[k][i] / aug[i][i]
+			for j = i, 2*size do
+				aug[k][j] = aug[k][j] - aug[i][j] * fac
+			end
+		end
+	end
+	for i = size, 1, -1 do
+		for j = size + 1, 2 * size do
+			aug[i][j] = aug[i][j] / aug[i][i]
+		end
+		aug[i][i] = 1
+		for k = i - 1, 1, -1 do
+			local fac = aug[k][i]
+			for j = i, 2 * size do
+				aug[k][j] = aug[k][j] - aug[i][j] * fac
+			end
+		end
+	end
+	local inv = {}
+	for i = 1, size do
+		inv[i] = {}
+		for j = size + 1, 2 * size do
+			inv[i][j - size] = aug[i][j]
+		end
+	end
+	return inv
 end
 
 local function conclusionStatement(pValue, alpha)
